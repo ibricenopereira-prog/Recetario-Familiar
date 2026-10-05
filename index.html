@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5eb" />
+    <meta name="description" content="Recetas tradicionales de Venezuela, Chile y Bolivia para cocinar y compartir en casa." />
+    <title>Sabor en Casa | Recetas para compartir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Sabor en Casa, inicio"><span class="brand-mark" aria-hidden="true">s<span>.</span></span><span>Sabor <i>en Casa</i></span></a>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="#recetas">Recetas</a><a href="#origenes">Nuestros sabores</a></nav>
+      <div class="header-actions">
+        <button class="favorites-link" id="favorites-toggle" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.5 4.5 0 0 1 8.8-1.3 4.5 4.5 0 0 1 8.8 1.3Z" /></svg><span>Favoritos</span><span class="favorite-count" id="favorite-count">0</span></button>
+        <button class="add-recipe-button" id="open-recipe-form" type="button"><span aria-hidden="true">+</span> Agregar receta</button>
+      </div>
+      <button class="mobile-add" id="open-recipe-form-mobile" type="button" aria-label="Agregar receta">+</button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Recetario latinoamericano</p>
+          <h1 id="hero-title">De nuestra tierra,<br /><em>a tu mesa.</em></h1>
+          <p class="hero-description">Platos que saben a hogar, historias que pasan de mano en mano. Encuentra tu próximo favorito entre Venezuela, Chile y Bolivia.</p>
+          <a class="hero-link" href="#recetas">Explorar las recetas <span aria-hidden="true">↘</span></a>
+          <div class="hero-footnote"><span>12</span> recetas para compartir <span class="footnote-line"></span> y seguir sumando</div>
+        </div>
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Pabell%C3%B3n_Criollo_Venezolano.jpg/960px-Pabell%C3%B3n_Criollo_Venezolano.jpg" alt="Pabellón criollo venezolano con arroz, caraotas, carne mechada y tajadas" />
+          <div class="hero-image-caption"><span>01 / VENEZUELA</span><strong>Pabellón criollo</strong></div>
+          <span class="hero-stamp" aria-hidden="true">Hecho<br />en casa</span>
+        </div>
+      </section>
+
+      <section class="recipe-section" id="recetas" aria-labelledby="recipes-title">
+        <div class="section-heading"><div><p class="eyebrow">Una mesa, muchas raíces</p><h2 id="recipes-title">¿Qué se te antoja?</h2></div><p class="section-aside">Recetas con memoria,<br />listas para tu cocina.</p></div>
+        <div class="recipe-toolbar">
+          <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.4 4.4" /></svg><input id="recipe-search" type="search" placeholder="Busca un plato o ingrediente" autocomplete="off" /><span class="search-shortcut" aria-hidden="true">⌕</span></label>
+          <div class="country-filters" role="group" aria-label="Filtrar recetas por país">
+            <button class="country-filter is-active" type="button" data-country="Todos" aria-pressed="true">Todos <span>12</span></button>
+            <button class="country-filter" type="button" data-country="Venezuela" aria-pressed="false">Venezuela</button>
+            <button class="country-filter" type="button" data-country="Chile" aria-pressed="false">Chile</button>
+            <button class="country-filter" type="button" data-country="Bolivia" aria-pressed="false">Bolivia</button>
+          </div>
+        </div>
+        <div class="results-line"><p id="results-count" aria-live="polite">12 recetas</p><button id="clear-filters" class="clear-filters" type="button" hidden>Limpiar filtros <span aria-hidden="true">×</span></button></div>
+        <div class="recipe-grid" id="recipe-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No encontramos esa receta</h3><p>Prueba con otro nombre, ingrediente o país.</p><button id="empty-reset" type="button">Ver todas las recetas</button></div>
+      </section>
+
+      <section class="origins-section" id="origenes" aria-labelledby="origins-title">
+        <div class="origins-heading"><p class="eyebrow">Tres lugares, una misma mesa</p><h2 id="origins-title">Sabores que nos encuentran.</h2></div>
+        <div class="origin-list">
+          <a href="#recetas" class="origin-item" data-origin="Venezuela"><span class="origin-number">01</span><span class="origin-name">Venezuela</span><span class="origin-note">Del maíz, el río y la reunión</span><span class="origin-arrow" aria-hidden="true">↗</span></a>
+          <a href="#recetas" class="origin-item" data-origin="Chile"><span class="origin-number">02</span><span class="origin-name">Chile</span><span class="origin-note">Cocina larga, corazón generoso</span><span class="origin-arrow" aria-hidden="true">↗</span></a>
+          <a href="#recetas" class="origin-item" data-origin="Bolivia"><span class="origin-number">03</span><span class="origin-name">Bolivia</span><span class="origin-note">Altura, fuego y mucho sabor</span><span class="origin-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">s<span>.</span></span><span>Sabor <i>en Casa</i></span></a><p>Una receta compartida siempre sabe mejor.</p><a href="#inicio" class="back-to-top">Volver arriba ↑</a></footer>
+
+    <dialog class="recipe-dialog" id="recipe-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar receta">×</button><div id="recipe-detail"></div></dialog>
+    <dialog class="form-dialog" id="form-dialog" aria-labelledby="form-title">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar formulario">×</button>
+      <div class="form-heading"><p class="eyebrow">Una receta de tu casa</p><h2 id="form-title">Comparte el sabor.</h2><p>Completa los detalles y suma tu receta al recetario.</p></div>
+      <form id="recipe-form">
+        <label class="form-label">Nombre del plato<input name="name" type="text" maxlength="70" required placeholder="Ej. Sopa de la abuela" /></label>
+        <div class="form-row"><label class="form-label">País<select name="country" required><option value="Venezuela">Venezuela</option><option value="Chile">Chile</option><option value="Bolivia">Bolivia</option></select></label><label class="form-label">Categoría<select name="category"><option>Plato principal</option><option>Entrada</option><option>Sopa</option><option>Desayuno</option><option>Postre</option></select></label></div>
+        <div class="form-row"><label class="form-label">Preparación (minutos)<input name="minutes" type="number" min="1" max="1440" value="45" required /></label><label class="form-label">Dificultad<select name="difficulty"><option>Fácil</option><option selected>Media</option><option>Avanzada</option></select></label></div>
+        <label class="form-label">Imagen (URL)<input name="image" type="url" placeholder="https://... (opcional)" /></label>
+        <label class="form-label">Ingredientes <span class="field-hint">Uno por línea</span><textarea name="ingredients" rows="4" required placeholder="2 tazas de harina de maíz&#10;1 taza de agua&#10;Sal al gusto"></textarea></label>
+        <label class="form-label">Preparación <span class="field-hint">Un paso por línea</span><textarea name="instructions" rows="5" required placeholder="Mezcla los ingredientes...&#10;Cocina hasta que esté listo..."></textarea></label>
+        <p class="form-message" id="form-message" role="status"></p><button class="submit-recipe" type="submit">Guardar receta <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+  </body>
+</html>
